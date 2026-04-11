@@ -18,8 +18,4 @@ except RepositoryNotFoundError:
     create_repo(repo_id=repo_id, repo_type=repo_type, private=False)
     print(f"Space '{repo_id}' created.")
 
-api.upload_folder(
-    folder_path="tourism_project/data",
-    repo_id=repo_id,
-    repo_type=repo_type,
-)
+print("Dataset registration complete. tourism.csv should already be uploaded to the HF dataset repo.")
