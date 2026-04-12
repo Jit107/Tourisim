@@ -25,12 +25,13 @@ ytest_path = "hf://datasets/jit0107/Tourism/ytest.csv"
 
 Xtrain = pd.read_csv(Xtrain_path)
 Xtest = pd.read_csv(Xtest_path)
-ytrain = pd.read_csv(ytrain_path)
+ytrain = pd.read_csv(ytrain_path).squeeze() # .squeeze() to convert DataFrame to Series
 ytest = pd.read_csv(ytest_path).squeeze() # .squeeze() to convert DataFrame to Series
 
 # Correctly identify numeric and categorical features for the Tourism dataset
 numeric_features = [
     'Age',
+    'TypeofContact',
     'CityTier',
     'DurationOfPitch',
     'NumberOfPersonVisiting',
@@ -42,7 +43,6 @@ numeric_features = [
     'NumberOfFollowups'
 ]
 categorical_features = [
-    'TypeofContact',
     'Occupation',
     'Gender',
     'MaritalStatus',
